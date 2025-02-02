@@ -6,12 +6,13 @@ setup(
     name=package_name,
     version='0.0.0',
     packages=find_packages(exclude=['test']),
+   
     data_files=[
-    ('share/ament_index/resource_index/packages', ['resource/image_processing_pkg']),
-    ('share/image_processing_pkg', ['package.xml']),
-    ('share/image_processing_pkg/launch', ['launch/image_pipeline_launch.py']),
-],
-    install_requires=['setuptools'],
+        ('share/ament_index/resource_index/packages', ['resource/image_processing_pkg']),
+        ('share/image_processing_pkg', ['package.xml']),
+        ('share/image_processing_pkg/launch', ['launch/detection_pipeline_launch.py']),
+    ],
+    install_requires=['setuptools', 'rosidl_default_generators'],
     zip_safe=True,
     maintainer='turtle',
     maintainer_email='adefr011@gmail.com',
@@ -20,7 +21,11 @@ setup(
     tests_require=['pytest'],
     entry_points={
     'console_scripts': [
-        'image_processor = image_processing_pkg.image_processor:main',
+        'bbox_predictor = image_processing_pkg.bbox_predictor:main',
+        'bbox_visualizer = image_processing_pkg.bbox_visualizer:main',
     ],
-    },
+},
 )
+
+# install_requires=['setuptools', 'rosidl_default_generators'],
+
