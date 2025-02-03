@@ -1,8 +1,8 @@
-# 16280-Student-Object-Detection
+# 16280-Object-Detection (TA Version)
 
 ## Setup Instructions
 
-1. **Fill in the necessary code** for the following scripts:  
+1. **Necessary code** for students to fill in the following scripts:  
    - `bbox_predictor.py`  
    - `bbox_visualizer.py`  
 
