@@ -17,18 +17,19 @@ def dfs(interface, depth_limit=50):
     Returns:
         A plan (list of (action, binding) tuples) if a goal state is reached; otherwise, None.
     """
-    initial_state = interface.get_initial_state()
+    initial_state = _____ #TODO
     # Stack elements: (state, plan, depth_remaining)
     stack = [(initial_state, [], depth_limit)]
     visited = set()
     
     while stack:
-        state, plan, depth_remaining = stack.pop()
+        _, _, _ = stack.pop() #TODO
         
         if interface.is_goal_state(state):
-            return plan
+            return _ #TODO
         
-        if depth_remaining <= 0:
+        if _ <= 0:
+            #TODO: check for whether max depth has been reached
             continue
         
         state_key = frozenset(state)
@@ -37,11 +38,11 @@ def dfs(interface, depth_limit=50):
         visited.add(state_key)
         
         for action, binding in interface.find_applicable_actions(state):
-            new_state = interface.apply_action(action, state, binding)
+            new_state = interface.apply_action(_, _, _) #TODO
             new_plan = plan + [(action, binding)]
-            stack.append((new_state, new_plan, depth_remaining - 1))
+            stack.append((_, _, _ - 1)) #TODO
     
-    return None
+    return _ #TODO
 
 class PlannerNode(Node):
     def __init__(self):
