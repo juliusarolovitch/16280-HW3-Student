@@ -1,10 +1,12 @@
-# 16280-Object-Detection (TA Version)
+# 16280 Planning
 
 ## Setup Instructions
 
-1. **Necessary code** for students to fill in the following scripts:  
-   - `bbox_predictor.py`  
-   - `bbox_visualizer.py`  
+You will need to review the interface for AmenablePDDL, see it here: https://github.com/juliusarolovitch/Amenable-PDDL/blob/main/README.md
+
+1. **Necessary code** for you to fill in the following scripts:  
+   - `planner_node.py`
+  
 
 2. **Build the required packages** using:  
    ```sh
@@ -16,9 +18,9 @@
    source install/setup.bash
    ```  
 
-## Running Object Detection
+## Running Object Detection & Planning
 
-To perform object detection using TurtleBot images:  
+To perform planning using TurtleBot images:  
 
 1. **Start the camera node** on your TurtleBot:  
    _(Ensure the TurtleBot is powered on and the camera node is running in a separate terminal.)_  
@@ -28,4 +30,4 @@ To perform object detection using TurtleBot images:
    ros2 launch image_processing_pkg detection_pipeline_launch.py
    ```  
 
-This will initiate the object detection process using images captured by the TurtleBot.
+This will initiate the planning process using images captured by the TurtleBot.
