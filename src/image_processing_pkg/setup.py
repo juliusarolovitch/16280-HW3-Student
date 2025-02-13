@@ -21,8 +21,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
     'console_scripts': [
-        'bbox_predictor = image_processing_pkg.bbox_predictor:main',
-        'bbox_visualizer = image_processing_pkg.bbox_visualizer:main',
+        'image_node = image_processing_pkg.image_node:main',
+        'planner = image_processing_pkg.planner_node:main',
     ],
 },
 )
