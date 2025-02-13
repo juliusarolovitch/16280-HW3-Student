@@ -5,14 +5,14 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='image_processing_pkg',
-            executable='bbox_predictor',
-            name='bbox_predictor',
+            executable='image_node',
+            name='image_node', 
             output='screen'
         ),
         Node(
             package='image_processing_pkg',
-            executable='bbox_visualizer',
-            name='bbox_visualizer',
+            executable='planner_node',
+            name='planner_node', 
             output='screen'
         ),
     ])
