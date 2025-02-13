@@ -33,19 +33,17 @@ class ImageNode(Node):
         # Encode image as JPEG to send to the server
         _, img_encoded = cv2.imencode(".jpg", cv_image)
 
-        # Send the image to the EC2 Flask server
+        # Send the image to  server
         try:
             response = requests.post(SERVER_URL, files={"image": img_encoded.tobytes()})
-            response.raise_for_status()  # Raise an error if request failed
+            response.raise_for_status() 
         except requests.exceptions.RequestException as e:
             self.get_logger().error(f"Failed to send request to server: {e}")
             return
 
-        # Parse the JSON response
+        # Parse JSON response
         detections = response.json().get("detections", [])
         detection_msg = DetectionArray()
-
-        # Sync timestamp with image
         detection_msg.header.stamp = msg.header.stamp
 
         for det in detections:
@@ -55,7 +53,7 @@ class ImageNode(Node):
             detection.score = det["score"]
             detection_msg.detections.append(detection)
 
-        # Publish the detections
+        # Publish  detections
         self.detection_publisher.publish(detection_msg)
         self.get_logger().info(f"Published {len(detection_msg.detections)} detections")
 
