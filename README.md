@@ -25,7 +25,7 @@ To perform planning using TurtleBot images:
 1. **Start the camera node** on your TurtleBot:  
    _(Ensure the TurtleBot is powered on and the camera node is running in a separate terminal.)_  
 
-2. **Launch the detection pipeline** on your VM:  
+2. **Launch the planning pipeline** on your machine:  
    ```sh
    ros2 launch image_processing_pkg detection_pipeline_launch.py
    ```  
