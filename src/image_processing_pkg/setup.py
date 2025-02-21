@@ -22,7 +22,7 @@ setup(
     entry_points={
     'console_scripts': [
         'image_node = image_processing_pkg.image_node:main',
-        'planner = image_processing_pkg.planner_node:main',
+        'planner_node = image_processing_pkg.planner_node:main',
     ],
 },
 )
